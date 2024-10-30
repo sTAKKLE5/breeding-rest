@@ -1,0 +1,104 @@
+basePath: /api/v1
+definitions:
+  models.ErrorTraitResponse:
+    properties:
+      error:
+        type: string
+      message:
+        type: string
+    type: object
+  models.Plant:
+    properties:
+      name:
+        type: string
+      traits:
+        items:
+          $ref: '#/definitions/models.Trait'
+        type: array
+    type: object
+  models.Trait:
+    properties:
+      dominant:
+        type: boolean
+      geneLabel:
+        type: string
+      name:
+        type: string
+    type: object
+  models.TraitCombination:
+    properties:
+      description:
+        type: string
+      genotype:
+        type: string
+      numberOfPlants:
+        type: integer
+      percentage:
+        type: number
+    type: object
+  models.TraitRequest:
+    properties:
+      fatherPlant:
+        $ref: '#/definitions/models.Plant'
+      motherPlant:
+        $ref: '#/definitions/models.Plant'
+      plantCount:
+        type: integer
+    type: object
+  models.TraitResponse:
+    properties:
+      combinations:
+        items:
+          $ref: '#/definitions/models.TraitCombination'
+        type: array
+      fatherPlantName:
+        type: string
+      motherPlantName:
+        type: string
+      plantCount:
+        type: integer
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: The Pepper Analytics AI platform is a comprehensive system designed
+    to manage and analyze data related to plant breeding projects. It provides a RESTful
+    API for various operations, including managing species, varieties, plants, fertilizers,
+    observations, seed banks, breeding projects, and notes. The platform uses the
+    Gin framework for routing and middleware, and it integrates Swagger for API documentation.
+    The system ensures data integrity through transaction middleware and supports
+    CRUD operations for all major entities.
+  title: Pepper Analytics API
+  version: "1.0"
+paths:
+  /trait-probability:
+    post:
+      consumes:
+      - application/json
+      description: Calculate the probability of a trait based on the genotype of two
+        plants
+      parameters:
+      - description: Trait probability calculation request
+        in: body
+        name: trait
+        required: true
+        schema:
+          $ref: '#/definitions/models.TraitRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TraitResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorTraitResponse'
+      summary: Calculate Trait Probability
+      tags:
+      - trait-probability
+schemes:
+- http
+- https
+swagger: "2.0"
