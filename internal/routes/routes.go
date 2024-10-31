@@ -24,6 +24,7 @@ func SetupRouter() *gin.Engine {
 
 	router.LoadHTMLGlob("templates/**/*")
 	router.Static("/css", "./static/css")
+	router.Static("/js", "./static/js")
 
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
