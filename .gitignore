@@ -49,3 +49,10 @@ main
 !/docs/swagger.json
 
 !/docs/swagger.yaml
+/node_modules/
+!/package.json
+
+!/package-lock.json
+
+!/tailwind.config.js
+!/templates/index/index.html
