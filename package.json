@@ -1,5 +1,20 @@
 {
+  "name": "pepper-analytics",
+  "version": "1.0.0",
+  "description": "The Pepper Analytics AI platform is a comprehensive system designed to manage and analyze data related to plant breeding projects. It provides a RESTful API for various operations, including managing species, varieties, plants, fertilizers, observations, seed banks, breeding projects, and notes. The platform uses the Gin framework for routing and middleware, and it integrates Swagger for API documentation. The system ensures data integrity through transaction middleware and supports CRUD operations for all major entities.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+  "build-css": "tailwindcss -i ./static/css/tailwind/tailwind.css -o ./static/css/styles.css"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.4.14"
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.11"
   }
 }

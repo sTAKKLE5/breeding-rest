@@ -56,3 +56,6 @@ main
 
 !/tailwind.config.js
 !/templates/index/index.html
+!/static/css/tailwind/tailwind.css
+
+!/static/css/styles.css
