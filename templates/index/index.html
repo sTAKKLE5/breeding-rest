@@ -1,21 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Page title</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.cdnfonts.com/css/general-sans?styles=135312,135310,135313,135303" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/tailwind/tailwind.min.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
-</head>
-<body class="antialiased bg-body text-body font-body">
-    <div class="">
-                
-      <div data-from-ai="true" class="flex justify-center min-h-screen items-center">  <div class="container mx-auto px-4 max-w-6xl">    <div class="grid md:grid-cols-2 gap-8">      <!-- Plant 1 -->      <div class="bg-white p-6 rounded-xl shadow-lg">        <h5 class="mb-6 text-xl font-bold font-heading leading-normal text-center">Plant 1</h5>        <div class="mb-4">          <label class="block mb-2 text-gray-900 font-semibold leading-normal">Plant Name</label>          <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" type="text" placeholder="Enter plant name">        </div>        <hr class="my-4 border-gray-300">        <div id="traits-container-1">          <div class="trait-group mb-6 relative">            <button class="absolute top-0 right-0 text-blue-500 hover:text-blue-700" onclick="deleteTrait(this)">              <span class="text-xl font-bold">×</span>            </button>            <div class="mb-4">              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Trait Name</label>              <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300 gene-label-input" type="text" placeholder="Enter trait name">            </div>            <div class="mb-4">              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Dominance</label>              <div class="flex flex-row items-center gap-4">                <label class="flex items-center">                  <input type="radio" name="dominance1_1" class="mr-2">                  <span>Dominant</span>                </label>                <label class="flex items-center">                  <input type="radio" name="dominance1_1" class="mr-2">                  <span>Recessive</span>                </label>              </div>            </div>            <div class="mb-4">              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Gene Label</label>              <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300 gene-label-source" type="text" placeholder="Enter gene label">            </div>          </div>        </div>      </div>      <!-- Plant 2 -->      <div class="bg-white p-6 rounded-xl shadow-lg">        <h5 class="mb-6 text-xl font-bold font-heading leading-normal text-center">Plant 2</h5>        <div class="mb-4">          <label class="block mb-2 text-gray-900 font-semibold leading-normal">Plant Name</label>          <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" type="text" placeholder="Enter plant name">        </div>        <hr class="my-4 border-gray-300">        <div id="traits-container-2">          <div class="trait-group mb-6 relative">            <button class="absolute top-0 right-0 text-blue-500 hover:text-blue-700" onclick="deleteTrait(this)">              <span class="text-xl font-bold">×</span>            </button>            <div class="mb-4">              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Trait Name</label>              <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300 gene-label-input" type="text" placeholder="Enter trait name">            </div>            <div class="mb-4">              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Dominance</label>              <div class="flex flex-row items-center gap-4">                <label class="flex items-center">                  <input type="radio" name="dominance2_1" class="mr-2">                  <span>Dominant</span>                </label>                <label class="flex items-center">                  <input type="radio" name="dominance2_1" class="mr-2">                  <span>Recessive</span>                </label>              </div>            </div>            <div class="mb-4">              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Gene Label</label>              <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300 gene-label-source" type="text" placeholder="Enter gene label">            </div>          </div>        </div>      </div>    </div>    <div class="flex justify-center mt-6">      <button onclick="addTrait()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Add New Trait</button>    </div>  </div></div>
-    </div>
-</body>
+   <head>
+      <title>Page title</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.cdnfonts.com/css/general-sans?styles=135312,135310,135313,135303" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/styles.css">
+      <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+   </head>
+   <body class="antialiased bg-body text-body font-body">
+      <div class="">
+         <div data-from-ai="true" class="flex justify-center min-h-screen items-center">
+            <div class="container mx-auto px-4 max-w-6xl">
+               <div class="grid md:grid-cols-2 gap-8">
+                  <!-- Plant 1 -->
+                  <div class="bg-white p-6 rounded-xl shadow-lg">
+                     <h5 class="mb-6 text-xl font-bold font-heading leading-normal text-center">Plant 1</h5>
+                     <div class="mb-4">          <label class="block mb-2 text-gray-900 font-semibold leading-normal">Plant Name</label>          <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" type="text" placeholder="Enter plant name">        </div>
+                     <hr class="my-4 border-gray-300">
+                     <div id="traits-container-1">
+                        <div class="trait-group mb-6 relative">
+                           <button class="absolute top-0 right-0 text-blue-500 hover:text-blue-700">              <span class="text-xl font-bold">×</span>            </button>
+                           <div class="mb-4">              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Trait Name</label>              <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300 gene-label-input" type="text" placeholder="Enter trait name">            </div>
+                           <div class="mb-4">
+                              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Dominance</label>
+                              <div class="flex flex-row items-center gap-4">                <label class="flex items-center">                  <input type="radio" name="dominance1_1" class="mr-2">                  <span>Dominant</span>                </label>                <label class="flex items-center">                  <input type="radio" name="dominance1_1" class="mr-2">                  <span>Recessive</span>                </label>              </div>
+                           </div>
+                           <div class="mb-4">              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Gene Label</label>              <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300 gene-label-source" type="text" placeholder="Enter gene label">            </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Plant 2 -->
+                  <div class="bg-white p-6 rounded-xl shadow-lg">
+                     <h5 class="mb-6 text-xl font-bold font-heading leading-normal text-center">Plant 2</h5>
+                     <div class="mb-4">          <label class="block mb-2 text-gray-900 font-semibold leading-normal">Plant Name</label>          <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" type="text" placeholder="Enter plant name">        </div>
+                     <hr class="my-4 border-gray-300">
+                     <div id="traits-container-2">
+                        <div class="trait-group mb-6 relative">
+                           <button class="absolute top-0 right-0 text-blue-500 hover:text-blue-700">              <span class="text-xl font-bold">×</span>            </button>
+                           <div class="mb-4">              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Trait Name</label>              <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300 gene-label-input" type="text" placeholder="Enter trait name">            </div>
+                           <div class="mb-4">
+                              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Dominance</label>
+                              <div class="flex flex-row items-center gap-4">                <label class="flex items-center">                  <input type="radio" name="dominance2_1" class="mr-2">                  <span>Dominant</span>                </label>                <label class="flex items-center">                  <input type="radio" name="dominance2_1" class="mr-2">                  <span>Recessive</span>                </label>              </div>
+                           </div>
+                           <div class="mb-4">              <label class="block mb-2 text-gray-900 font-semibold leading-normal">Gene Label</label>              <input class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300 gene-label-source" type="text" placeholder="Enter gene label">            </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="flex justify-center mt-6">      <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Add New Trait</button>    </div>
+            </div>
+         </div>
+      </div>
+   </body>
 </html>
-
